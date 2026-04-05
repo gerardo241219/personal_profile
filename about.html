@@ -1,0 +1,560 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#a3aac4",
+              "surface-bright": "#1f2b49",
+              "secondary-container": "#00687a",
+              "tertiary-fixed": "#ff8ed2",
+              "primary-fixed-dim": "#8387ff",
+              primary: "#a3a6ff",
+              "error-dim": "#d73357",
+              "inverse-primary": "#494bd7",
+              "on-primary": "#0f00a4",
+              "tertiary-dim": "#ef81c4",
+              "primary-fixed": "#9396ff",
+              secondary: "#53ddfc",
+              "on-primary-container": "#0a0081",
+              outline: "#6d758c",
+              "secondary-fixed-dim": "#48d4f3",
+              "on-error-container": "#ffb2b9",
+              "tertiary-container": "#ff8ed2",
+              "on-primary-fixed": "#000000",
+              "on-surface": "#dee5ff",
+              "inverse-surface": "#faf8ff",
+              "secondary-fixed": "#65e1ff",
+              "error-container": "#a70138",
+              "primary-dim": "#6063ee",
+              surface: "#060e20",
+              "on-background": "#dee5ff",
+              "surface-variant": "#192540",
+              "on-secondary-fixed": "#003a45",
+              "surface-container": "#0f1930",
+              "tertiary-fixed-dim": "#ef81c4",
+              "on-secondary-container": "#ecfaff",
+              "on-tertiary": "#701455",
+              "on-secondary": "#004b58",
+              "on-tertiary-container": "#63054a",
+              "surface-container-low": "#091328",
+              "on-error": "#490013",
+              "surface-tint": "#a3a6ff",
+              "secondary-dim": "#40ceed",
+              "surface-container-high": "#141f38",
+              "surface-container-highest": "#192540",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed-variant": "#0e009d",
+              "on-tertiary-fixed": "#3b002b",
+              tertiary: "#ffa5d9",
+              error: "#ff6e84",
+              "surface-dim": "#060e20",
+              "outline-variant": "#40485d",
+              "inverse-on-surface": "#4d556b",
+              "on-secondary-fixed-variant": "#005969",
+              background: "#060e20",
+              "on-tertiary-fixed-variant": "#6e1354",
+              "primary-container": "#9396ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .tonal-shift {
+        transition: background-color 0.3s ease;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #060e20;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #40485d;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(222,229,255,0.06)] font-manrope tracking-tight leading-relaxed"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+      >
+        <div class="text-2xl font-bold tracking-tighter text-[#dee5ff]">
+          Luminary
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1"
+            href="about.html"
+            >About</a
+          >
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
+            href="projects.html"
+            >Projects</a
+          >
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
+            href="contact.html"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2 rounded-xl font-semibold scale-95 active:scale-90 transition-transform hover:opacity-90"
+        >
+          Resume
+        </button>
+      </div>
+    </nav>
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto overflow-x-hidden">
+      <!-- Hero Context / Title -->
+      <header class="mb-20">
+        <h1
+          class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface mb-4"
+        >
+          Fullstack <br />
+          <span class="text-primary">Web Developer.</span>
+        </h1>
+        <div class="h-1 w-24 bg-primary rounded-full"></div>
+      </header>
+      <!-- Main Content: Bio & Skills -->
+      <section
+        class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-32"
+      >
+        <!-- Left: Personal Bio -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"
+            ></div>
+            <div
+              class="relative rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/10"
+            >
+              <img
+                alt="Portrait of a developer"
+                class="w-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                data-alt="Close-up creative portrait of a professional developer in a dark studio setting with subtle blue rim lighting on their silhouette"
+                src="./assets/images/photo_profile.webp"
+              />
+            </div>
+          </div>
+          <div class="space-y-6">
+            <h2 class="text-3xl font-headline font-bold text-on-surface">
+              About me
+            </h2>
+            <p class="text-lg leading-relaxed text-on-surface-variant">
+              Software Developer with experience building scalable web and
+              mobile applications, primarily focused on CRM systems and internal
+              enterprise solutions. Proven ability to contribute to the
+              development of complex platforms, including sales management
+              systems, educational tools, and real-time communication
+              applications.
+            </p>
+            <p class="text-lg leading-relaxed text-on-surface-variant">
+              Skilled in designing and implementing efficient workflows,
+              developing new modules, and maintaining existing systems to ensure
+              performance and reliability. Experienced in working with modern
+              technologies and integrating systems to support business
+              operations and decision-making.
+            </p>
+            <p class="text-lg leading-relaxed text-on-surface-variant">
+              Passionate about continuous learning and delivering practical
+              solutions that improve processes and user experience.
+            </p>
+          </div>
+        </div>
+        <!-- Right: Skills Grid -->
+        <div class="lg:col-span-7 space-y-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Skill Card: React -->
+            <div
+              class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-300 group"
+            >
+              <h3 class="text-xl font-headline font-bold mb-4">Frontend</h3>
+              <div
+                class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"
+              >
+                <div class="h-full bg-primary w-[95%] rounded-full"></div>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >TailwindCSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >Bootstrap</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >AJAX</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >React Native</span
+                >
+              </div>
+            </div>
+            <!-- Skill Card: Node -->
+            <div
+              class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-300"
+            >
+              <h3 class="text-xl font-headline font-bold mb-4">Backend</h3>
+              <div
+                class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"
+              >
+                <div class="h-full bg-secondary w-[88%] rounded-full"></div>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >MySQL</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >PHP</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >Node</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >Express</span
+                >
+              </div>
+            </div>
+            <!-- Skill Card: Node -->
+            <div
+              class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-300"
+            >
+              <h3 class="text-xl font-headline font-bold mb-4">Services</h3>
+              <div
+                class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"
+              >
+                <div class="h-full bg-secondary w-[88%] rounded-full"></div>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >WhatsApp (1Msg)</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >Geolocalización (Google)</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >ApexCharts</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
+                  >Datatables</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Bento-style Stats -->
+          <div
+            class="bg-surface-container-highest/30 p-8 flex justify-between rounded-2xl gap-8"
+          >
+            <div class="text-center md:text-left">
+              <p class="text-3xl font-headline font-black text-primary">05+</p>
+              <p
+                class="font-label text-[10px] text-outline uppercase tracking-widest"
+              >
+                Years Experience
+              </p>
+            </div>
+            <div class="text-center md:text-left">
+              <p class="text-3xl font-headline font-black text-secondary">
+                10+
+              </p>
+              <p
+                class="font-label text-[10px] text-outline uppercase tracking-widest"
+              >
+                Projects Shipped
+              </p>
+            </div>
+            <div class="text-center md:text-left">
+              <p class="text-3xl font-headline font-black text-on-surface">
+                99.9
+              </p>
+              <p
+                class="font-label text-[10px] text-outline uppercase tracking-widest"
+              >
+                Uptime Focus
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Timeline -->
+      <section class="mt-40 mb-20">
+        <div class="flex items-center gap-6 mb-16">
+          <h2 class="text-4xl font-headline font-bold">Work Experience</h2>
+          <div class="flex-grow h-px bg-outline-variant/20"></div>
+        </div>
+        <div class="relative">
+          <!-- Vertical Line -->
+          <div
+            class="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent hidden md:block"
+          ></div>
+          <div class="space-y-24">
+            <!-- Current Role -->
+            <div
+              class="relative flex flex-col md:flex-row items-start md:items-center group"
+            >
+              <div class="md:w-1/2 md:pr-16 text-left md:text-right">
+                <span
+                  class="font-label text-xs tracking-widest text-primary uppercase mb-2 block"
+                  >2022 - 2026</span
+                >
+                <h3 class="text-2xl font-headline font-bold text-on-surface">
+                  Fullstack Web Developer
+                </h3>
+                <p class="text-on-surface-variant mt-2 max-w-md ml-auto">
+                  Lead the frontend architecture for high-traffic SaaS
+                  applications, focusing on component modularity and performance
+                  optimization.
+                </p>
+              </div>
+              <!-- Marker -->
+              <div
+                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-primary z-10 shadow-[0_0_20px_rgba(163,166,255,0.4)]"
+              ></div>
+              <div class="md:w-1/2 md:pl-16 mt-6 md:mt-0">
+                <div
+                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors"
+                >
+                  <p
+                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
+                  >
+                    Grupo Optima
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- First Job -->
+            <div
+              class="relative flex flex-col md:flex-row-reverse items-start md:items-center group"
+            >
+              <div class="md:w-1/2 md:pl-16 text-left">
+                <span
+                  class="font-label text-xs tracking-widest text-secondary uppercase mb-2 block"
+                  >2019 — 2022</span
+                >
+                <h3 class="text-2xl font-headline font-bold text-on-surface">
+                  Fullstack Web Developer
+                </h3>
+                <p class="text-on-surface-variant mt-2 max-w-md">
+                  Developed custom CMS solutions and interactive brand
+                  experiences for international clients. Refined Node.js and SQL
+                  expertise.
+                </p>
+              </div>
+              <!-- Marker -->
+              <div
+                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-secondary z-10"
+              ></div>
+              <div class="md:w-1/2 md:pr-16 mt-6 md:mt-0 text-right">
+                <div
+                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-secondary/30 transition-colors inline-block w-full md:w-auto min-w-[240px]"
+                >
+                  <p
+                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
+                  >
+                    Secretaria de Educación del Estado de Durango (SEED)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Timeline -->
+      <section class="mt-40 mb-20">
+        <div class="flex items-center gap-6 mb-16">
+          <h2 class="text-4xl font-headline font-bold">Education</h2>
+          <div class="flex-grow h-px bg-outline-variant/20"></div>
+        </div>
+        <div class="relative">
+          <!-- Vertical Line -->
+          <div
+            class="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent hidden md:block"
+          ></div>
+          <div class="space-y-24">
+            <!-- Current Role -->
+            <div
+              class="relative flex flex-col md:flex-row items-start md:items-center group"
+            >
+              <div class="md:w-1/2 md:pr-16 text-left md:text-right">
+                <span
+                  class="font-label text-xs tracking-widest text-primary uppercase mb-2 block"
+                  >2015 - 2022</span
+                >
+                <h3 class="text-2xl font-headline font-bold text-on-surface">
+                  Bachelor’s Degree
+                </h3>
+                <p class="text-on-surface-variant mt-2 max-w-md ml-auto">
+                  Computer Systems Engineering with a specialization in Mobile
+                  Development
+                </p>
+              </div>
+              <!-- Marker -->
+              <div
+                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-primary z-10 shadow-[0_0_20px_rgba(163,166,255,0.4)]"
+              ></div>
+              <div class="md:w-1/2 md:pl-16 mt-6 md:mt-0">
+                <div
+                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors"
+                >
+                  <p
+                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
+                  >
+                    Instituto Tecnologico de Durango
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- First Job -->
+            <div
+              class="relative flex flex-col md:flex-row-reverse items-start md:items-center group"
+            >
+              <div class="md:w-1/2 md:pl-16 text-left">
+                <span
+                  class="font-label text-xs tracking-widest text-secondary uppercase mb-2 block"
+                  >2012 - 2015</span
+                >
+                <h3 class="text-2xl font-headline font-bold text-on-surface">
+                  High School
+                </h3>
+                <p class="text-on-surface-variant mt-2 max-w-md">
+                  Diploma with a specialization in Programming
+                </p>
+              </div>
+              <!-- Marker -->
+              <div
+                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-secondary z-10"
+              ></div>
+              <div class="md:w-1/2 md:pr-16 mt-6 md:mt-0 text-right">
+                <div
+                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-secondary/30 transition-colors inline-block w-full md:w-auto min-w-[240px]"
+                >
+                  <p
+                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
+                  >
+                    CBTis #130
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-[#091328] w-full py-12 px-8 mt-auto border-t border-outline-variant/5"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
+      >
+        <div class="text-lg font-black text-[#dee5ff]">
+          The Kinetic Luminary
+        </div>
+        <div class="flex gap-8">
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
+            href="#"
+            >GitHub</a
+          >
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
+            href="#"
+            >LinkedIn</a
+          >
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
+            href="#"
+            >Twitter</a
+          >
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
+            href="#"
+            >Email</a
+          >
+        </div>
+        <div class="text-[#40485d] font-inter text-sm tracking-wide uppercase">
+          © 2024 The Kinetic Luminary. Built with Editorial Motion.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

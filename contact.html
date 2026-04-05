@@ -1,0 +1,292 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#a3aac4",
+              "surface-bright": "#1f2b49",
+              "secondary-container": "#00687a",
+              "tertiary-fixed": "#ff8ed2",
+              "primary-fixed-dim": "#8387ff",
+              primary: "#a3a6ff",
+              "error-dim": "#d73357",
+              "inverse-primary": "#494bd7",
+              "on-primary": "#0f00a4",
+              "tertiary-dim": "#ef81c4",
+              "primary-fixed": "#9396ff",
+              secondary: "#53ddfc",
+              "on-primary-container": "#0a0081",
+              outline: "#6d758c",
+              "secondary-fixed-dim": "#48d4f3",
+              "on-error-container": "#ffb2b9",
+              "tertiary-container": "#ff8ed2",
+              "on-primary-fixed": "#000000",
+              "on-surface": "#dee5ff",
+              "inverse-surface": "#faf8ff",
+              "secondary-fixed": "#65e1ff",
+              "error-container": "#a70138",
+              "primary-dim": "#6063ee",
+              surface: "#060e20",
+              "on-background": "#dee5ff",
+              "surface-variant": "#192540",
+              "on-secondary-fixed": "#003a45",
+              "surface-container": "#0f1930",
+              "tertiary-fixed-dim": "#ef81c4",
+              "on-secondary-container": "#ecfaff",
+              "on-tertiary": "#701455",
+              "on-secondary": "#004b58",
+              "on-tertiary-container": "#63054a",
+              "surface-container-low": "#091328",
+              "on-error": "#490013",
+              "surface-tint": "#a3a6ff",
+              "secondary-dim": "#40ceed",
+              "surface-container-high": "#141f38",
+              "surface-container-highest": "#192540",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed-variant": "#0e009d",
+              "on-tertiary-fixed": "#3b002b",
+              tertiary: "#ffa5d9",
+              error: "#ff6e84",
+              "surface-dim": "#060e20",
+              "outline-variant": "#40485d",
+              "inverse-on-surface": "#4d556b",
+              "on-secondary-fixed-variant": "#005969",
+              background: "#060e20",
+              "on-tertiary-fixed-variant": "#6e1354",
+              "primary-container": "#9396ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .tonal-shift {
+        background: linear-gradient(180deg, #060e20 0%, #091328 100%);
+      }
+      .glass-panel {
+        background: rgba(25, 37, 64, 0.4);
+        backdrop-filter: blur(24px);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col"
+  >
+    <!-- TopAppBar Navigation Shell -->
+    <header
+      class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(222,229,255,0.06)] background-transition"
+    >
+      <nav
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-manrope tracking-tight leading-relaxed"
+      >
+        <div class="text-2xl font-bold tracking-tighter text-[#dee5ff]">
+          Luminary
+        </div>
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
+            href="about.html"
+            >About</a
+          >
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
+            href="projects.html"
+            >Projects</a
+          >
+          <a
+            class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1"
+            href="contact.html"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-semibold hover:opacity-90 active:scale-95 transition-all"
+        >
+          Resume
+        </button>
+      </nav>
+    </header>
+    <main class="flex-grow pt-32 pb-20 px-8">
+      <div
+        class="max-w-7xl flex justify-center gap-16 items-center"
+      >
+        <!-- Left Column: Editorial Intro -->
+        <div class="space-y-12">
+          <div class="space-y-6">
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-surface-variant text-primary font-label text-xs tracking-widest uppercase"
+              >Available for work</span
+            >
+            <h1
+              class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter leading-[0.9] text-on-background"
+            >
+              Let's start <br />
+              a <span class="text-primary italic">conversation</span>.
+            </h1>
+            <p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+              Whether you have a project in mind, a business need, or a
+              technical challenge, I’m always open to discussing new
+              opportunities and collaborations.
+            </p>
+          </div>
+          <!-- Contact Details Grid (Bento Style) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="p-6 rounded-xl bg-surface-container-low group hover:bg-surface-container-high transition-all duration-300"
+            >
+              <div class="text-primary mb-4">
+                <span class="material-symbols-outlined text-3xl"
+                  >alternate_email</span
+                >
+              </div>
+              <h3
+                class="font-label text-xs uppercase tracking-widest text-outline mb-1"
+              >
+                Email Me
+              </h3>
+              <p class="font-headline font-bold text-xs text-on-surface">
+                gcecomputacion@gmail.com
+              </p>
+            </div>
+                        <div
+              class="p-6 rounded-xl bg-surface-container-low group hover:bg-surface-container-high transition-all duration-300"
+            >
+              <div class="text-primary mb-4">
+                <span class="material-symbols-outlined text-3xl"
+                  >phone</span
+                >
+              </div>
+              <h3
+                class="font-label text-xs uppercase tracking-widest text-outline mb-1"
+              >
+                Call Me
+              </h3>
+              <p class="font-headline font-bold text-xs text-on-surface">
+                +52 618 2 19 16 13
+              </p>
+            </div>
+            <div
+              class="p-6 rounded-xl bg-surface-container-low group hover:bg-surface-container-high transition-all duration-300"
+            >
+              <div class="text-primary mb-4">
+                <span class="material-symbols-outlined text-3xl"
+                  >location_on</span
+                >
+              </div>
+              <h3
+                class="font-label text-xs uppercase tracking-widest text-outline mb-1"
+              >
+                Based In
+              </h3>
+              <p class="font-headline font-bold text-on-surface text-xs">
+                Durango Dgo. México
+              </p>
+            </div>
+          </div>
+          <!-- Social Cluster -->
+          <div class="pt-4">
+            <div class="flex flex-wrap gap-4">
+              <a
+                class="flex items-center gap-3 px-5 py-3 rounded-xl bg-surface-container-highest text-on-surface hover:text-primary transition-all group"
+                href="#"
+              >
+                <span class="material-symbols-outlined" data-icon="link"
+                  >link</span
+                >
+                <span class="font-medium">LinkedIn</span>
+              </a>
+              <a
+                class="flex items-center gap-3 px-5 py-3 rounded-xl bg-surface-container-highest text-on-surface hover:text-primary transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined" data-icon="terminal"
+                  >terminal</span
+                >
+                <span class="font-medium">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer Navigation Shell -->
+    <footer
+      class="bg-[#091328] w-full py-12 px-8 mt-auto fade-in-up duration-500"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto font-inter text-sm tracking-wide uppercase"
+      >
+        <div class="text-lg font-black text-[#dee5ff]">Luminary</div>
+        <div class="flex gap-8 items-center">
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
+            href="#"
+            >GitHub</a
+          >
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
+            href="#"
+            >LinkedIn</a
+          >
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
+            href="#"
+            >Twitter</a
+          >
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
+            href="#"
+            >Email</a
+          >
+        </div>
+        <div class="text-[#40485d] text-center md:text-right normal-case">
+          © 2024 The Kinetic Luminary. Built with Editorial Motion.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

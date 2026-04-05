@@ -1,0 +1,366 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gerardo Amel | Fullstack Web Developer</title>
+    <meta
+      name="description"
+      content="Gerardo Amel's portfolio showcasing fullstack web development projects, skills, and experience. Explore innovative solutions and creative web applications built with modern technologies."
+    />
+    <meta
+      name="keywords"
+      content="Gerardo Amel, Fullstack Web Developer, Portfolio, Web Development, Projects, Skills, Experience, Innovative Solutions, Creative Web Applications, Modern Technologies"
+    />
+    <meta name="author" content="Gerardo Amel Castañeda Pérez" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#a3aac4",
+              "surface-bright": "#1f2b49",
+              "secondary-container": "#00687a",
+              "tertiary-fixed": "#ff8ed2",
+              "primary-fixed-dim": "#8387ff",
+              primary: "#a3a6ff",
+              "error-dim": "#d73357",
+              "inverse-primary": "#494bd7",
+              "on-primary": "#0f00a4",
+              "tertiary-dim": "#ef81c4",
+              "primary-fixed": "#9396ff",
+              secondary: "#53ddfc",
+              "on-primary-container": "#0a0081",
+              outline: "#6d758c",
+              "secondary-fixed-dim": "#48d4f3",
+              "on-error-container": "#ffb2b9",
+              "tertiary-container": "#ff8ed2",
+              "on-primary-fixed": "#000000",
+              "on-surface": "#dee5ff",
+              "inverse-surface": "#faf8ff",
+              "secondary-fixed": "#65e1ff",
+              "error-container": "#a70138",
+              "primary-dim": "#6063ee",
+              surface: "#060e20",
+              "on-background": "#dee5ff",
+              "surface-variant": "#192540",
+              "on-secondary-fixed": "#003a45",
+              "surface-container": "#0f1930",
+              "tertiary-fixed-dim": "#ef81c4",
+              "on-secondary-container": "#ecfaff",
+              "on-tertiary": "#701455",
+              "on-secondary": "#004b58",
+              "on-tertiary-container": "#63054a",
+              "surface-container-low": "#091328",
+              "on-error": "#490013",
+              "surface-tint": "#a3a6ff",
+              "secondary-dim": "#40ceed",
+              "surface-container-high": "#141f38",
+              "surface-container-highest": "#192540",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed-variant": "#0e009d",
+              "on-tertiary-fixed": "#3b002b",
+              tertiary: "#ffa5d9",
+              error: "#ff6e84",
+              "surface-dim": "#060e20",
+              "outline-variant": "#40485d",
+              "inverse-on-surface": "#4d556b",
+              "on-secondary-fixed-variant": "#005969",
+              background: "#060e20",
+              "on-tertiary-fixed-variant": "#6e1354",
+              "primary-container": "#9396ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hero-grid {
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(163, 166, 255, 0.05) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary"
+  >
+    <!-- TopNavBar from Shared Components JSON -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(222,229,255,0.06)]"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+      >
+        <div
+          class="text-2xl font-bold tracking-tighter text-[#dee5ff] font-headline"
+        >
+          Protafolio | Gerardo Amel
+        </div>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1 font-manrope tracking-tight leading-relaxed"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
+            href="about.html"
+            >About</a
+          >
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
+            href="projects.html"
+            >Projects</a
+          >
+          <a
+            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
+            href="contact.html"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="bg-gradient-to-tr from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-bold hover:opacity-90 transition-all scale-95 active:scale-90 transition-transform"
+          >
+            Resume
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main
+      class="relative min-h-screen flex flex-col items-center justify-center pt-20"
+    >
+      <!-- Hero Background Canvas -->
+      <div class="absolute inset-0 hero-grid -z-10"></div>
+      <div
+        class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full -z-10"
+      ></div>
+      <div
+        class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full -z-10"
+      ></div>
+      <!-- Hero Content -->
+      <section
+        class="max-w-7xl mx-auto px-8 w-full flex flex-col md:flex-row items-center gap-16 py-20"
+      >
+        <div class="flex-1 space-y-8">
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-3">
+            <span class="w-12 h-[1px] bg-primary"></span>
+            <span
+              class="font-label text-primary uppercase tracking-[0.2em] text-xs font-bold"
+              >Available for new projects</span
+            >
+          </div>
+          <!-- Headline -->
+          <h1
+            class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-[-0.04em]"
+          >
+            Hello, I'm
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed to-secondary"
+              >Gerardo Amel</span
+            >
+          </h1>
+          <!-- Subtitle -->
+          <p
+            class="text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed font-body"
+          >
+            Building scalable, user-focused web and mobile applications using modern technologies. Specialized in developing internal systems, CRM platforms, and efficient workflows, with a focus on performance, system integration, and practical solutions for real-world business needs.
+          </p>
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a
+              href="projects.html"
+              class="group flex items-center gap-3 bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(163,166,255,0.4)] transition-all duration-300"
+            >
+              View My Projects
+              <span
+                class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+            <a
+              href="contact.html"
+              class="group px-8 py-4 rounded-xl font-bold text-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-all duration-300 text-on-surface flex items-center gap-3"
+            >
+              Get in touch
+              <span class="material-symbols-outlined">mail</span>
+            </a>
+          </div>
+          <!-- Stats/Tech Chips -->
+          <div class="pt-12 flex flex-wrap gap-6 items-center">
+            <div class="flex flex-col">
+              <span class="text-2xl font-bold font-headline text-on-surface"
+                >10+</span
+              >
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant"
+                >Projects Delivered</span
+              >
+            </div>
+            <div
+              class="w-[1px] h-10 bg-outline-variant/20 hidden md:block"
+            ></div>
+            <div class="flex gap-2">
+              <span
+                class="bg-surface-variant px-3 py-1 rounded-full text-xs font-medium font-label tracking-wider text-primary border border-primary/10"
+                >PHP</span
+              >
+              <span
+                class="bg-surface-variant px-3 py-1 rounded-full text-xs font-medium font-label tracking-wider text-primary border border-primary/10"
+                >MySQL</span
+              >
+              <span
+                class="bg-surface-variant px-3 py-1 rounded-full text-xs font-medium font-label tracking-wider text-primary border border-primary/10"
+                >REACT</span
+              >
+              <span
+                class="bg-surface-variant px-3 py-1 rounded-full text-xs font-medium font-label tracking-wider text-primary border border-primary/10"
+                >REACT NATIVE</span
+              >
+              <span
+                class="bg-surface-variant px-3 py-1 rounded-full text-xs font-medium font-label tracking-wider text-primary border border-primary/10"
+                >NEXT.JS</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Hero Image / Visual Element -->
+        <div class="flex-1 relative w-full aspect-square md:aspect-auto">
+          <div
+            class="relative z-10 w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <img
+              alt="Developer workspace"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              data-alt="Modern dark-themed developer workspace with multiple monitors showing clean code in a minimalist futuristic office with blue neon accents"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHA74nqcmXr9yepjYMyua96C32aVraXbyW02TCbuO8_VfjFApGArjRb3eaY19HY72cHRMH-pTBfgeDTr_JJDGyWr-p0IlC10NpE7dWE9GawieaPQWEHY7JJ0g-yNF0clXUCZvtM2IJx7oohWlMyJ4MuR2SRgGtTBjHjGgPWdCz_EZgOpr2bD6YjyQ8RQDkM6F27pBgpw1npfgvQlvdtAgAyof3fxKrZAf58KjRBpQyo8jZTDvCMXyErHjc5CssxiyW5G1_ArDeM6U2"
+            />
+            <!-- Decorative Overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"
+            ></div>
+          </div>
+          <!-- Floating Card Detail -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-surface-container-high/80 backdrop-blur-xl p-6 rounded-2xl border border-outline-variant/10 shadow-2xl max-w-[200px] z-20"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <div
+                class="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+              ></div>
+              <span
+                class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant"
+                >Live System Status</span
+              >
+            </div>
+            <div class="text-sm font-body text-on-surface leading-snug">
+              99.9% Performance score on all recent deployments.
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Marquee / Social Proof -->
+      <div
+        class="w-full bg-surface-container-low py-10 mt-auto border-y border-outline-variant/5"
+      >
+        <div
+          class="max-w-7xl mx-auto px-8 flex justify-center items-center opacity-30 grayscale contrast-125 gap-8 overflow-hidden"
+        >
+          <span
+            class="text-xl font-black font-headline border rounded-full px-3 py-1"
+            >Grupo Optima</span
+          >
+          <span
+            class="text-xl font-black font-headline border rounded-full px-3 py-1"
+            >Secretaria de Educación del Estado de Durango</span
+          >
+          <!-- <span class="text-xl font-black font-headline">STRIPE</span>
+          <span class="text-xl font-black font-headline">VERCEL</span>
+          <span class="text-xl font-black font-headline">ADOBE</span>
+          <span class="text-xl font-black font-headline">META</span>
+          <span class="text-xl font-black font-headline hidden md:block"
+            >AIRBNB</span
+          > -->
+        </div>
+      </div>
+    </main>
+    <!-- Footer from Shared Components JSON -->
+    <footer class="bg-[#091328] w-full py-12 px-8 mt-auto">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
+      >
+        <div
+          class="text-lg font-black text-[#dee5ff] font-headline tracking-tighter"
+        >
+          Portafolio | Gerardo Amel
+        </div>
+        <div class="font-inter text-sm tracking-wide uppercase text-[#40485d]">
+          © 2026 Gerardo Amel Castañeda Pérez | Fullstack Web Developer.
+        </div>
+        <div class="flex gap-6 items-center">
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] transition-opacity uppercase text-xs font-bold tracking-widest font-inter"
+            target="_blank"
+            href="https://github.com/gerardocastaneda24"
+            >GitHub</a
+          >
+          <a
+            class="text-[#40485d] hover:text-[#dee5ff] transition-opacity uppercase text-xs font-bold tracking-widest font-inter"
+            target="_blank"
+            href="https://www.linkedin.com/in/gerardocastaneda24/"
+            >LinkedIn</a
+          >
+          <a
+            class="text-[#a3a6ff] uppercase text-xs font-bold tracking-widest font-inter"
+            href="mailto:gcecomputacion@gmail.com"
+            >Email</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
