@@ -4,152 +4,144 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gerardo Amel | Fullstack Web Developer</title>
+    <meta
+      content="Gerardo Amel's portfolio showcasing fullstack web development projects, skills, and experience."
+      name="description"
+    />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "1rem",
+              sm: "2rem",
+              lg: "4rem",
+              xl: "5rem",
+              "2xl": "6rem",
+            },
+          },
           extend: {
             colors: {
               "on-surface-variant": "#a3aac4",
-              "surface-bright": "#1f2b49",
-              "secondary-container": "#00687a",
-              "tertiary-fixed": "#ff8ed2",
-              "primary-fixed-dim": "#8387ff",
               primary: "#a3a6ff",
-              "error-dim": "#d73357",
-              "inverse-primary": "#494bd7",
-              "on-primary": "#0f00a4",
-              "tertiary-dim": "#ef81c4",
-              "primary-fixed": "#9396ff",
               secondary: "#53ddfc",
-              "on-primary-container": "#0a0081",
-              outline: "#6d758c",
-              "secondary-fixed-dim": "#48d4f3",
-              "on-error-container": "#ffb2b9",
-              "tertiary-container": "#ff8ed2",
-              "on-primary-fixed": "#000000",
-              "on-surface": "#dee5ff",
-              "inverse-surface": "#faf8ff",
-              "secondary-fixed": "#65e1ff",
-              "error-container": "#a70138",
-              "primary-dim": "#6063ee",
               surface: "#060e20",
-              "on-background": "#dee5ff",
+              "on-surface": "#dee5ff",
               "surface-variant": "#192540",
-              "on-secondary-fixed": "#003a45",
               "surface-container": "#0f1930",
-              "tertiary-fixed-dim": "#ef81c4",
-              "on-secondary-container": "#ecfaff",
-              "on-tertiary": "#701455",
-              "on-secondary": "#004b58",
-              "on-tertiary-container": "#63054a",
               "surface-container-low": "#091328",
-              "on-error": "#490013",
-              "surface-tint": "#a3a6ff",
-              "secondary-dim": "#40ceed",
-              "surface-container-high": "#141f38",
-              "surface-container-highest": "#192540",
-              "surface-container-lowest": "#000000",
-              "on-primary-fixed-variant": "#0e009d",
-              "on-tertiary-fixed": "#3b002b",
-              tertiary: "#ffa5d9",
-              error: "#ff6e84",
-              "surface-dim": "#060e20",
               "outline-variant": "#40485d",
-              "inverse-on-surface": "#4d556b",
-              "on-secondary-fixed-variant": "#005969",
               background: "#060e20",
-              "on-tertiary-fixed-variant": "#6e1354",
               "primary-container": "#9396ff",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
             },
             fontFamily: {
               headline: ["Manrope"],
               body: ["Inter"],
-              label: ["Inter"],
             },
           },
         },
       };
     </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
+      .hero-grid {
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(163, 166, 255, 0.05) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
       }
-      .tonal-shift {
-        background: linear-gradient(180deg, #060e20 0%, #091328 100%);
+      /* Smooth transitions for mobile drawer */
+      #drawer {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .glass-panel {
-        background: rgba(25, 37, 64, 0.4);
-        backdrop-filter: blur(24px);
+      /* Prevent scrolling when drawer is open */
+      body.drawer-open {
+        overflow: hidden;
       }
     </style>
   </head>
   <body
-    class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col"
+    class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary overflow-x-hidden"
   >
-    <!-- TopAppBar Navigation Shell -->
-    <header
-      class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(222,229,255,0.06)] background-transition"
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10"
     >
-      <nav
-        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-manrope tracking-tight leading-relaxed"
-      >
-        <div class="text-2xl font-bold tracking-tighter text-[#dee5ff]">
-          Luminary
+      <div class="container flex justify-between items-center py-4 lg:py-6">
+        <div class="text-lg md:text-xl font-bold tracking-tight">
+          Portfolio <span class="text-primary mx-1">|</span> Gerardo Amel
         </div>
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
-            href="index.html"
-            >Home</a
-          >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
-            href="about.html"
-            >About</a
-          >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
-            href="projects.html"
-            >Projects</a
-          >
-          <a
-            class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1"
-            href="contact.html"
-            >Contact</a
-          >
+        <div class="hidden md:flex gap-8 lg:gap-12 font-medium">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
         </div>
-        <button
-          class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-semibold hover:opacity-90 active:scale-95 transition-all"
+        <div class="flex items-center gap-4">
+          <button
+            class="hidden md:block bg-primary text-surface font-bold px-6 py-2 rounded-lg hover:brightness-110 transition-all"
+          >
+            Resume
+          </button>
+          <button
+            aria-label="Open Menu"
+            class="md:hidden text-3xl p-2 -mr-2"
+            id="menu-btn"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Navigation Overlay & Drawer -->
+    <div
+      class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 z-[60]"
+      id="overlay"
+    ></div>
+    <div
+      class="fixed top-0 right-0 h-full w-[80%] max-w-[320px] bg-surface-container border-l border-outline-variant/20 transform translate-x-full z-[70] p-8 flex flex-col shadow-2xl"
+      id="drawer"
+    >
+      <div class="flex justify-between items-center mb-12">
+        <span
+          class="text-sm font-bold uppercase tracking-widest text-on-surface-variant"
+          >Menu</span
         >
-          Resume
+        <button
+          aria-label="Close Menu"
+          class="text-3xl p-2 -mr-2"
+          id="close-btn"
+        >
+          <span class="material-symbols-outlined">close</span>
         </button>
-      </nav>
-    </header>
+      </div>
+      <div class="flex flex-col gap-8 text-xl font-semibold">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+      <div class="mt-auto pt-8">
+        <button
+          class="w-full bg-primary text-surface font-bold px-4 py-4 rounded-xl shadow-lg shadow-primary/20"
+        >
+          Download Resume
+        </button>
+      </div>
+    </div>
+
     <main class="flex-grow pt-32 pb-20 px-8">
       <div
         class="max-w-7xl flex justify-center gap-16 items-center"
@@ -253,40 +245,72 @@
         </div>
       </div>
     </main>
-    <!-- Footer Navigation Shell -->
     <footer
-      class="bg-[#091328] w-full py-12 px-8 mt-auto fade-in-up duration-500"
+      class="bg-surface-container-low w-full py-12 md:py-16 border-t border-outline-variant/10 mt-auto"
     >
-      <div
-        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto font-inter text-sm tracking-wide uppercase"
-      >
-        <div class="text-lg font-black text-[#dee5ff]">Luminary</div>
-        <div class="flex gap-8 items-center">
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
-            href="#"
-            >GitHub</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
-            href="#"
-            >LinkedIn</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
-            href="#"
-            >Twitter</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] hover:opacity-80 transition-opacity"
-            href="#"
-            >Email</a
-          >
+      <div class="container">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"
+        >
+          <div class="space-y-4">
+            <div class="text-xl font-black text-on-surface">
+              Portafolio <span class="text-primary mx-1">|</span> Gerardo Amel
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
+            <div class="flex gap-6">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >LinkedIn</a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >GitHub</a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >Twitter</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="text-[#40485d] text-center md:text-right normal-case">
-          © 2024 The Kinetic Luminary. Built with Editorial Motion.
+        <div
+          class="mt-12 pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-on-surface-variant/60 uppercase tracking-widest"
+        >
+          <div>© 2026 Gerardo Amel. All rights reserved.</div>
         </div>
       </div>
     </footer>
+    <script>
+      const menuBtn = document.querySelector("#menu-btn");
+      const closeBtn = document.querySelector("#close-btn");
+      const drawer = document.querySelector("#drawer");
+      const overlay = document.querySelector("#overlay");
+      const body = document.body;
+
+      const toggleDrawer = (isOpen) => {
+        if (isOpen) {
+          drawer.classList.remove("translate-x-full");
+          overlay.classList.remove("opacity-0", "pointer-events-none");
+          body.classList.add("drawer-open");
+        } else {
+          drawer.classList.add("translate-x-full");
+          overlay.classList.add("opacity-0", "pointer-events-none");
+          body.classList.remove("drawer-open");
+        }
+      };
+
+      menuBtn.onclick = () => toggleDrawer(true);
+      closeBtn.onclick = () => toggleDrawer(false);
+      overlay.onclick = () => toggleDrawer(false);
+
+      // Close drawer when a link is clicked
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.onclick = () => toggleDrawer(false);
+      });
+    </script>
   </body>
 </html>
