@@ -4,212 +4,210 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
+    <title>Gerardo Amel | Fullstack Web Developer</title>
+    <meta
+      content="Gerardo Amel's portfolio showcasing fullstack web development projects, skills, and experience."
+      name="description"
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "1rem",
+              sm: "2rem",
+              lg: "4rem",
+              xl: "5rem",
+              "2xl": "6rem",
+            },
+          },
           extend: {
             colors: {
               "on-surface-variant": "#a3aac4",
-              "surface-bright": "#1f2b49",
-              "secondary-container": "#00687a",
-              "tertiary-fixed": "#ff8ed2",
-              "primary-fixed-dim": "#8387ff",
               primary: "#a3a6ff",
-              "error-dim": "#d73357",
-              "inverse-primary": "#494bd7",
-              "on-primary": "#0f00a4",
-              "tertiary-dim": "#ef81c4",
-              "primary-fixed": "#9396ff",
               secondary: "#53ddfc",
-              "on-primary-container": "#0a0081",
-              outline: "#6d758c",
-              "secondary-fixed-dim": "#48d4f3",
-              "on-error-container": "#ffb2b9",
-              "tertiary-container": "#ff8ed2",
-              "on-primary-fixed": "#000000",
-              "on-surface": "#dee5ff",
-              "inverse-surface": "#faf8ff",
-              "secondary-fixed": "#65e1ff",
-              "error-container": "#a70138",
-              "primary-dim": "#6063ee",
               surface: "#060e20",
-              "on-background": "#dee5ff",
+              "on-surface": "#dee5ff",
               "surface-variant": "#192540",
-              "on-secondary-fixed": "#003a45",
               "surface-container": "#0f1930",
-              "tertiary-fixed-dim": "#ef81c4",
-              "on-secondary-container": "#ecfaff",
-              "on-tertiary": "#701455",
-              "on-secondary": "#004b58",
-              "on-tertiary-container": "#63054a",
               "surface-container-low": "#091328",
-              "on-error": "#490013",
-              "surface-tint": "#a3a6ff",
-              "secondary-dim": "#40ceed",
-              "surface-container-high": "#141f38",
-              "surface-container-highest": "#192540",
-              "surface-container-lowest": "#000000",
-              "on-primary-fixed-variant": "#0e009d",
-              "on-tertiary-fixed": "#3b002b",
-              tertiary: "#ffa5d9",
-              error: "#ff6e84",
-              "surface-dim": "#060e20",
               "outline-variant": "#40485d",
-              "inverse-on-surface": "#4d556b",
-              "on-secondary-fixed-variant": "#005969",
               background: "#060e20",
-              "on-tertiary-fixed-variant": "#6e1354",
               "primary-container": "#9396ff",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
             },
             fontFamily: {
               headline: ["Manrope"],
               body: ["Inter"],
-              label: ["Inter"],
             },
           },
         },
       };
     </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
+      .hero-grid {
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(163, 166, 255, 0.05) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
       }
-      .tonal-shift {
-        transition: background-color 0.3s ease;
+      /* Smooth transitions for mobile drawer */
+      #drawer {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .background-transition {
-        transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      /* Prevent scrolling when drawer is open */
+      body.drawer-open {
+        overflow: hidden;
       }
     </style>
   </head>
   <body
-    class="bg-surface text-on-background font-body selection:bg-primary selection:text-on-primary"
+    class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary overflow-x-hidden"
   >
-    <!-- TopNavBar -->
     <nav
-      class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(222,229,255,0.06)] tonal-shift background-transition"
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10"
     >
-      <div
-        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
-      >
-        <div
-          class="text-2xl font-bold tracking-tighter text-[#dee5ff] font-headline"
-        >
-          Luminary
+      <div class="container flex justify-between items-center py-4 lg:py-6">
+        <div class="text-lg md:text-xl font-bold tracking-tight">
+          Portfolio <span class="text-primary mx-1">|</span> Gerardo Amel
         </div>
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
-            href="index.html"
+        <div class="hidden md:flex gap-8 lg:gap-12 font-medium">
+          <a class="hover:text-primary transition-colors" href="index.html"
             >Home</a
           >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
-            href="about.html"
+          <a class="hover:text-primary transition-colors" href="about.html"
             >About</a
           >
-          <a
-            class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1 font-manrope tracking-tight leading-relaxed"
-            href="projects.html"
+          <a class="hover:text-primary transition-colors" href="projects.html"
             >Projects</a
           >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
-            href="contact.html"
+          <a class="hover:text-primary transition-colors" href="contact.html"
             >Contact</a
           >
         </div>
         <div class="flex items-center gap-4">
           <button
-            class="bg-gradient-to-tr from-primary to-primary-container text-on-primary-container px-6 py-2 rounded-xl font-semibold hover:bg-[#192540] transition-all duration-300 scale-95 active:scale-90 transition-transform"
+            class="hidden md:block bg-primary text-surface font-bold px-6 py-2 rounded-lg hover:brightness-110 transition-all"
           >
             Resume
+          </button>
+          <button
+            aria-label="Open Menu"
+            class="md:hidden text-3xl p-2 -mr-2"
+            id="menu-btn"
+          >
+            <span class="material-symbols-outlined">menu</span>
           </button>
         </div>
       </div>
     </nav>
-    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
-      <!-- Header Section -->
-      <header class="mb-20 max-w-2xl">
-        <h1
-          class="text-6xl md:text-7xl font-headline font-extrabold text-on-surface tracking-tighter mb-6 leading-none"
+    <!-- Navigation Overlay & Drawer -->
+    <div
+      class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 z-[60]"
+      id="overlay"
+    ></div>
+
+    <div
+      class="fixed top-0 right-0 h-full w-[80%] max-w-[320px] bg-surface-container border-l border-outline-variant/20 transform translate-x-full z-[70] p-8 flex flex-col shadow-2xl"
+      id="drawer"
+    >
+      <div class="flex justify-between items-center mb-12">
+        <span
+          class="text-sm font-bold uppercase tracking-widest text-on-surface-variant"
+          >Menu</span
         >
-          Projects
-        </h1>
-      </header>
-      <div
-        class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-10"
-        role="alert"
-      >
-        <div class="flex items-start gap-3">
-          <svg
-            class="w-6 h-6 mt-1 text-red-500"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M8.257 3.099c.765-1.36 2.72-1.36 3.485 0l6.516 11.59c.75 1.335-.213 2.99-1.742 2.99H3.483c-1.53 0-2.492-1.655-1.743-2.99l6.517-11.59zM11 14a1 1 0 10-2 0 1 1 0 002 0zm-1-8a1 1 0 00-.993.883L9 7v4a1 1 0 001.993.117L11 11V7a1 1 0 00-1-1z"
-              clip-rule="evenodd"
-            />
-          </svg>
-
-          <div>
-            <p class="font-semibold">Restricted Access Notice</p>
-            <p class="text-sm mt-1">
-              Due to confidentiality agreements, the systems showcased in this
-              portfolio are internal enterprise solutions. Access to live
-              environments cannot be shared. However, detailed information about
-              features, architecture, and my contributions can be provided upon
-              request.
-            </p>
-          </div>
-        </div>
+        <button
+          aria-label="Close Menu"
+          class="text-3xl p-2 -mr-2"
+          id="close-btn"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
       </div>
+      <div class="flex flex-col gap-8 text-xl font-semibold">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Projects</a>
+        <a class="nav-link" href="#">Contact</a>
+      </div>
+      <div class="mt-auto pt-8">
+        <button
+          class="w-full bg-primary text-surface font-bold px-4 py-4 rounded-xl shadow-lg shadow-primary/20"
+        >
+          Download Resume
+        </button>
+      </div>
+    </div>
 
-      <!-- Projects Grid: Bento-style Asymmetry -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <!-- Feature Card 1 (Large) -->
+    <main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <!-- Hero Header Section -->
+      <header class="mb-20 max-w-3xl">
+        <h1
+          class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6"
+        >
+          Featured Projects
+        </h1>
+        <p
+          class="text-on-surface-variant text-lg md:text-xl leading-relaxed font-body"
+        >
+          Explore my experience building scalable solutions, from robust backend
+          architectures to dynamic frontend interfaces and enterprise automation
+          systems.
+        </p>
+      </header>
+      <!-- Projects Grid -->
+      <div class="asymmetric-grid pb-20">
+        <!-- Project 1: PXO -->
         <div
-          class="md:col-span-8 group relative bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high border border-outline-variant/15"
+          class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden tonal-shift hover:bg-surface-container-high hover:shadow-[0_20px_40px_rgba(222,229,255,0.04)]"
         >
           <div
-            class="aspect-video flex items-center justify-center overflow-hidden p-6"
+            class="h-64 flex justify-center items-center overflow-hidden relative m-4 rounded-lg"
           >
             <img
-              alt="Project Aether"
-              class="w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
-              data-alt="Abstract 3D digital shapes in deep violet and blue hues, floating in a dark minimalist space with soft cinematic lighting"
+              alt="CRM Dashboard UI"
+              class="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Modern high-tech data dashboard with complex analytics charts and dark blue glowing interface elements on a black background"
               src="./assets/images/pxo.png"
             />
+            <div
+              class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/10"
+            >
+              <span
+                class="font-label text-[10px] text-secondary tracking-widest uppercase font-bold"
+                >Fullstack</span
+              >
+            </div>
           </div>
-          <div class="px-8 pb-8">
-            <div class="flex flex-wrap gap-2 mb-4">
+          <div class="px-8 pb-8 pt-2">
+            <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">
+              PXO
+            </h3>
+            <p class="text-primary-dim font-medium text-sm mb-4">
+              Grupo Optima
+            </p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Designed and developed a web-based CRM system for insurance policy
+              sales management. Implemented features such as sales tracking,
+              customer relationship management, and data analytics for
+              performance insights. Built automated email campaigns to support
+              marketing efforts and integrated the platform with internal
+              enterprise systems, improving workflow efficiency and data
+              consistency.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-8">
               <span
                 class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
                 >Bootstrap</span
@@ -243,42 +241,47 @@
                 >WhatsApp (Wati)</span
               >
             </div>
-            <h3
-              class="text-3xl font-headline font-bold text-on-surface mb-3 tracking-tight"
-            >
-              <a href="https://pxoptima.com/" target="_blank" class="underline"
-                >PX Optima - Grupo Optima</a
-              >
-            </h3>
-            <p
-              class="text-on-surface-variant mb-6 font-body leading-relaxed max-w-lg"
-            >
-              Designed and developed a web-based CRM system for insurance policy
-              sales management. Implemented features such as sales tracking,
-              customer relationship management, and data analytics for
-              performance insights. Built automated email campaigns to support
-              marketing efforts and integrated the platform with internal
-              enterprise systems, improving workflow efficiency and data
-              consistency.
-            </p>
           </div>
         </div>
-        <!-- Feature Card 2 (Vertical) -->
+        <!-- Project 2: Plataforma Educativa SEED -->
         <div
-          class="md:col-span-4 group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high border border-outline-variant/15 flex flex-col"
+          class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden tonal-shift hover:bg-surface-container-high hover:shadow-[0_20px_40px_rgba(222,229,255,0.04)]"
         >
           <div
-            class="aspect-[4/5] flex items-center justify-center overflow-hidden p-6"
+            class="h-64 flex justify-center items-center overflow-hidden relative m-4 rounded-lg"
           >
             <img
-              alt="Cipher Core"
-              class="w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
-              data-alt="Macro photography of futuristic computer hardware with neon blue circuit lines and glowing technological components"
+              alt="Educational Platform UI"
+              class="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Clean educational interface on a laptop screen with organized document structures and minimalist pedagogical design in cool tones"
               src="./assets/images/gpo.png"
             />
+            <div
+              class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/10"
+            >
+              <span
+                class="font-label text-[10px] text-secondary tracking-widest uppercase font-bold"
+                >Fullstack</span
+              >
+            </div>
           </div>
-          <div class="px-8 pb-8 mt-auto">
-            <div class="flex flex-wrap gap-2 mb-4">
+          <div class="px-8 pb-8 pt-2">
+            <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">
+              KCRM - HCRM
+            </h3>
+            <p class="text-primary-dim font-medium text-sm mb-4">
+              Grupo Optima
+            </p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Contributed to the development and maintenance of internal
+              web-based CRM systems for managing vehicle sales for brands such
+              as Honda and KIA. Supported the implementation of new modules and
+              the enhancement of existing ones, including customer process
+              management, sales tracking, and employee operations. Helped
+              improve data organization, streamline workflows, and maintain
+              system reliability within the organization.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-8">
               <span
                 class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
                 >Bootstrap</span
@@ -301,59 +304,36 @@
                 >AJAX</span
               >
             </div>
-            <h3
-              class="text-2xl font-headline font-bold text-on-surface mb-3 tracking-tight"
-            >
-              <a href="https://gpoptima.com/" target="_blank" class="underline"
-                >KCRM - HCRM - Grupo Optima</a
-              >
-            </h3>
-            <p
-              class="text-on-surface-variant mb-6 font-body leading-relaxed text-sm"
-            >
-              Contributed to the development and maintenance of internal
-              web-based CRM systems for managing vehicle sales for brands such
-              as Honda and KIA. Supported the implementation of new modules and
-              the enhancement of existing ones, including customer process
-              management, sales tracking, and employee operations. Helped
-              improve data organization, streamline workflows, and maintain
-              system reliability within the organization.
-            </p>
           </div>
         </div>
-        <!-- Feature Card 3 (Square) -->
+        <!-- Project 3: App de Geolocalización -->
         <div
-          class="md:col-span-5 group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high border border-outline-variant/15"
+          class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden tonal-shift hover:bg-surface-container-high hover:shadow-[0_20px_40px_rgba(222,229,255,0.04)]"
         >
-          <div
-            class="aspect-square flex items-center justify-center overflow-hidden p-6"
-          >
+          <div class="h-64 overflow-hidden relative m-4 rounded-lg">
             <img
-              alt="App"
-              class="w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
-              data-alt="Clean minimal UI design mockups on a glass screen with soft pastel gradients and sleek modern typography"
+              alt="Geolocation Tracking Map"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Digital night map visualization with glowing path lines and location pin markers over a dark stylized urban topography"
               src="./assets/images/android-logo.png"
             />
-          </div>
-          <div class="px-8 pb-8">
-            <div class="flex flex-wrap gap-2 mb-4">
+            <div
+              class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/10"
+            >
               <span
-                class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
-                >Android Studio</span
-              >
-              <span
-                class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
-                >Sockets IO</span
+                class="font-label text-[10px] text-secondary tracking-widest uppercase font-bold"
+                >Mobiles</span
               >
             </div>
-            <h3
-              class="text-2xl font-headline font-bold text-on-surface mb-3 tracking-tight"
-            >
-              App - Grupo Optima
+          </div>
+          <div class="px-8 pb-8 pt-2">
+            <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">
+              App
             </h3>
-            <p
-              class="text-on-surface-variant mb-6 font-body leading-relaxed text-sm"
-            >
+            <p class="text-primary-dim font-medium text-sm mb-4">
+              Grupo Optima
+            </p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
               Contributed to the development of a mobile application integrated
               with an internal enterprise system (SYGO). Implemented real-time
               communication using sockets to receive event-driven triggers and
@@ -362,42 +342,48 @@
               sales processes, improving communication and operational
               responsiveness.
             </p>
-          </div>
-        </div>
-        <!-- Feature Card 4 (Medium) -->
-        <div
-          class="md:col-span-7 group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high border border-outline-variant/15 flex flex-col md:flex-row"
-        >
-          <div
-            class="md:w-1/2 flex items-center justify-center overflow-hidden p-6"
-          >
-            <img
-              alt="Neural Link"
-              class="w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
-              data-alt="Digital representation of neural networks with glowing nodes and interconnected data streams on a deep space background"
-              src="./assets/images/react-native.png"
-            />
-          </div>
-          <div class="md:w-1/2 px-8 py-8 flex flex-col justify-center">
-            <div class="flex flex-wrap gap-2 mb-4">
+            <div class="flex flex-wrap gap-2 mb-8">
               <span
-                class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
-                >React Native</span
+                class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-bold font-label tracking-wider uppercase"
+                >Android Studio</span
               >
               <span
-                class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
-                >PHP</span
+                class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-bold font-label tracking-wider uppercase"
+                >WebSockets</span
               >
             </div>
-            <h3
-              class="text-2xl font-headline font-bold text-on-surface mb-3 tracking-tight"
+          </div>
+        </div>
+        <!-- Project 4: Integración de WhatsApp (1Msg) -->
+        <div
+          class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden tonal-shift hover:bg-surface-container-high hover:shadow-[0_20px_40px_rgba(222,229,255,0.04)]"
+        >
+          <div
+            class="h-64 flex justify-center items-center overflow-hidden relative m-4 rounded-lg"
+          >
+            <img
+              alt="Communication Workflow Automation"
+              class="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Conceptual visualization of automated message bubbles flowing through a digital circuit board with soft glowing cyan light"
+              src="./assets/images/react-native.png"
+            />
+            <div
+              class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/10"
             >
-              App - Registro de asistencias - Secretaría de Educación del Estado
-              de Durango
+              <span
+                class="font-label text-[10px] text-secondary tracking-widest uppercase font-bold"
+                >Mobiles</span
+              >
+            </div>
+          </div>
+          <div class="px-8 pb-8 pt-2">
+            <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">
+              App
             </h3>
-            <p
-              class="text-on-surface-variant mb-6 font-body leading-relaxed text-sm"
-            >
+            <p class="text-primary-dim font-medium text-sm mb-4">
+              Secretaria de Educacion del Estado de Durango
+            </p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
               Contributed to the development of a mobile application for
               attendance tracking at internal events organized by the State
               Department of Education of Durango. Implemented QR code scanning
@@ -406,25 +392,61 @@
               of a web platform to access reports and analytics, providing
               insights into attendance metrics and event performance.
             </p>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span
+                class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-bold font-label tracking-wider uppercase"
+                >React Native</span
+              >
+              <span
+                class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-bold font-label tracking-wider uppercase"
+                >PHP</span
+              >
+            </div>
           </div>
         </div>
 
-        <!-- Feature Card 5 (Medium) -->
+        <!-- Project 5: Integración de WhatsApp (1Msg) -->
         <div
-          class="md:col-span-7 group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high border border-outline-variant/15 flex flex-col md:flex-row"
+          class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden tonal-shift hover:bg-surface-container-high hover:shadow-[0_20px_40px_rgba(222,229,255,0.04)]"
         >
           <div
-            class="md:w-1/2 flex items-center justify-center overflow-hidden p-6"
+            class="h-64 flex justify-center items-center overflow-hidden relative m-4 rounded-lg"
           >
             <img
-              alt="Neural Link"
-              class="w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
-              data-alt="Digital representation of neural networks with glowing nodes and interconnected data streams on a deep space background"
+              alt="Communication Workflow Automation"
+              class="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Conceptual visualization of automated message bubbles flowing through a digital circuit board with soft glowing cyan light"
               src="./assets/images/seed.svg"
             />
+            <div
+              class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/10"
+            >
+              <span
+                class="font-label text-[10px] text-secondary tracking-widest uppercase font-bold"
+                >Fullstack</span
+              >
+            </div>
           </div>
-          <div class="md:w-1/2 px-8 py-8 flex flex-col justify-center">
-            <div class="flex flex-wrap gap-2 mb-4">
+          <div class="px-8 pb-8 pt-2">
+            <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">
+              Macrosystem
+            </h3>
+            <p class="text-primary-dim font-medium text-sm mb-4">
+              Secretaria de Educacion del Estado de Durango
+            </p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Contributed to the development of a large-scale system designed to
+              manage multiple internal departments within the State Department
+              of Education. Participated in building a school management module
+              for secondary schools and teacher training institutions, including
+              features for student records and academic tracking. Supported the
+              implementation of an employee credentialing system for both
+              administrative and educational staff, including ID generation and
+              printing. Additionally, contributed to the geolocation mapping of
+              schools across Durango and the development of analytics for
+              student performance, grades, and institutional infrastructure.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-8">
               <span
                 class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
                 >Bootstrap</span
@@ -450,45 +472,48 @@
                 >MySQL</span
               >
             </div>
-            <h3
-              class="text-2xl font-headline font-bold text-on-surface mb-3 tracking-tight"
-            >
-              <a href="https://educacion.durango.gob.mx/" target="_blank" class="underline"
-                >Macrosystem - Secretaria de Educacion del Estado de Durango</a
-              >
-            </h3>
-            <p
-              class="text-on-surface-variant mb-6 font-body leading-relaxed text-sm"
-            >
-              Contributed to the development of a large-scale system designed to
-              manage multiple internal departments within the State Department
-              of Education. Participated in building a school management module
-              for secondary schools and teacher training institutions, including
-              features for student records and academic tracking. Supported the
-              implementation of an employee credentialing system for both
-              administrative and educational staff, including ID generation and
-              printing. Additionally, contributed to the geolocation mapping of
-              schools across Durango and the development of analytics for
-              student performance, grades, and institutional infrastructure.
-            </p>
           </div>
         </div>
-        <!-- Feature Card 6 (Square) -->
+
+        <!-- Project 4: Integración de WhatsApp (1Msg) -->
         <div
-          class="md:col-span-5 group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high border border-outline-variant/15"
+          class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden tonal-shift hover:bg-surface-container-high hover:shadow-[0_20px_40px_rgba(222,229,255,0.04)]"
         >
           <div
-            class="aspect-square flex items-center justify-center overflow-hidden p-6"
+            class="h-64 flex justify-center items-center overflow-hidden relative m-4 rounded-lg"
           >
             <img
-              alt="USICAMM - Secretaría de Educación del Estado de Durango"
-              class="w-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
-              data-alt="Clean minimal UI design mockups on a glass screen with soft pastel gradients and sleek modern typography"
+              alt="Communication Workflow Automation"
+              class="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Conceptual visualization of automated message bubbles flowing through a digital circuit board with soft glowing cyan light"
               src="./assets/images/seed.svg"
             />
+            <div
+              class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/10"
+            >
+              <span
+                class="font-label text-[10px] text-secondary tracking-widest uppercase font-bold"
+                >FullStack</span
+              >
+            </div>
           </div>
-          <div class="px-8 pb-8">
-            <div class="flex flex-wrap gap-2 mb-4">
+          <div class="px-8 pb-8 pt-2">
+            <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">
+              USICAMM
+            </h3>
+            <p class="text-primary-dim font-medium text-sm mb-4">
+              Secretaria de Educacion del Estado de Durango
+            </p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Designed and developed a web application using a custom MVC
+              architecture in PHP, built from scratch to align with specific
+              project requirements and improve workflow efficiency. The system
+              supports internal processes for teacher allocation to schools,
+              onboarding of new educators into the educational system, and
+              management of job transfers between institutions, among other
+              administrative operations.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-8">
               <span
                 class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label font-bold tracking-widest uppercase rounded-full"
                 >Bootstrap</span
@@ -510,66 +535,104 @@
                 >Datatables</span
               >
             </div>
-            <h3
-              class="text-2xl font-headline font-bold text-on-surface mb-3 tracking-tight"
-            >
-              <a href="https://educacion.durango.gob.mx/" target="_blank" class="underline"
-                >USICAMM - Secretaría de Educación del Estado de Durango</a
-              >
-            </h3>
-            <p
-              class="text-on-surface-variant mb-6 font-body leading-relaxed text-sm"
-            >
-              Designed and developed a web application using a custom MVC
-              architecture in PHP, built from scratch to align with specific
-              project requirements and improve workflow efficiency. The system
-              supports internal processes for teacher allocation to schools,
-              onboarding of new educators into the educational system, and
-              management of job transfers between institutions, among other
-              administrative operations.
-            </p>
           </div>
         </div>
       </div>
-    </main>
-    <!-- Footer -->
-    <footer class="bg-[#091328] w-full py-12 px-8 mt-auto">
-      <div
-        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
+
+      <!-- Call to Action Section -->
+      <section
+        class="mt-12 bg-surface-container-low rounded-3xl p-12 text-center relative overflow-hidden"
       >
         <div
-          class="text-lg font-black text-[#dee5ff] font-headline uppercase tracking-widest"
-        >
-          Luminary
+          class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"
+        ></div>
+        <div class="relative z-10">
+          <h2
+            class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-6"
+          >
+            Have a project in mind?
+          </h2>
+          <p class="text-on-surface-variant max-w-xl mx-auto mb-10 text-lg">
+            I’m open to collaborating on scalable backend development and modern
+            web solutions. Let’s discuss how I can bring value to your team.
+          </p>
+          <div class="flex flex-col md:flex-row justify-center gap-4">
+            <button
+              class="bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-[0_10px_30px_rgba(163,166,255,0.3)]"
+            >
+             Contact me
+            </button>
+          </div>
         </div>
-        <div class="flex items-center gap-8">
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >GitHub</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >LinkedIn</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >Twitter</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >Email</a
-          >
+      </section>
+    </main>
+
+    <footer
+      class="bg-surface-container-low w-full py-12 md:py-16 border-t border-outline-variant/10 mt-auto"
+    >
+      <div class="container">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"
+        >
+          <div class="space-y-4">
+            <div class="text-xl font-black text-on-surface">
+              Portafolio <span class="text-primary mx-1">|</span> Gerardo Amel
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
+            <div class="flex gap-6">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >LinkedIn</a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >GitHub</a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >Twitter</a
+              >
+            </div>
+          </div>
         </div>
         <div
-          class="text-[#40485d] font-inter text-xs tracking-wide uppercase text-center md:text-right"
+          class="mt-12 pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-on-surface-variant/60 uppercase tracking-widest"
         >
-          © 2024 The Kinetic Luminary. Built with Editorial Motion.
+          <div>© 2026 Gerardo Amel. All rights reserved.</div>
         </div>
       </div>
     </footer>
+    <script>
+      const menuBtn = document.querySelector("#menu-btn");
+      const closeBtn = document.querySelector("#close-btn");
+      const drawer = document.querySelector("#drawer");
+      const overlay = document.querySelector("#overlay");
+      const body = document.body;
+
+      const toggleDrawer = (isOpen) => {
+        if (isOpen) {
+          drawer.classList.remove("translate-x-full");
+          overlay.classList.remove("opacity-0", "pointer-events-none");
+          body.classList.add("drawer-open");
+        } else {
+          drawer.classList.add("translate-x-full");
+          overlay.classList.add("opacity-0", "pointer-events-none");
+          body.classList.remove("drawer-open");
+        }
+      };
+
+      menuBtn.onclick = () => toggleDrawer(true);
+      closeBtn.onclick = () => toggleDrawer(false);
+      overlay.onclick = () => toggleDrawer(false);
+
+      // Close drawer when a link is clicked
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.onclick = () => toggleDrawer(false);
+      });
+    </script>
   </body>
 </html>

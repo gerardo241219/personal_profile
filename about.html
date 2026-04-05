@@ -4,194 +4,175 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
+    <title>Gerardo Amel | Fullstack Web Developer</title>
+    <meta
+      content="Gerardo Amel's portfolio showcasing fullstack web development projects, skills, and experience."
+      name="description"
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "1rem",
+              sm: "2rem",
+              lg: "4rem",
+              xl: "5rem",
+              "2xl": "6rem",
+            },
+          },
           extend: {
             colors: {
               "on-surface-variant": "#a3aac4",
-              "surface-bright": "#1f2b49",
-              "secondary-container": "#00687a",
-              "tertiary-fixed": "#ff8ed2",
-              "primary-fixed-dim": "#8387ff",
               primary: "#a3a6ff",
-              "error-dim": "#d73357",
-              "inverse-primary": "#494bd7",
-              "on-primary": "#0f00a4",
-              "tertiary-dim": "#ef81c4",
-              "primary-fixed": "#9396ff",
               secondary: "#53ddfc",
-              "on-primary-container": "#0a0081",
-              outline: "#6d758c",
-              "secondary-fixed-dim": "#48d4f3",
-              "on-error-container": "#ffb2b9",
-              "tertiary-container": "#ff8ed2",
-              "on-primary-fixed": "#000000",
-              "on-surface": "#dee5ff",
-              "inverse-surface": "#faf8ff",
-              "secondary-fixed": "#65e1ff",
-              "error-container": "#a70138",
-              "primary-dim": "#6063ee",
               surface: "#060e20",
-              "on-background": "#dee5ff",
+              "on-surface": "#dee5ff",
               "surface-variant": "#192540",
-              "on-secondary-fixed": "#003a45",
               "surface-container": "#0f1930",
-              "tertiary-fixed-dim": "#ef81c4",
-              "on-secondary-container": "#ecfaff",
-              "on-tertiary": "#701455",
-              "on-secondary": "#004b58",
-              "on-tertiary-container": "#63054a",
               "surface-container-low": "#091328",
-              "on-error": "#490013",
-              "surface-tint": "#a3a6ff",
-              "secondary-dim": "#40ceed",
-              "surface-container-high": "#141f38",
-              "surface-container-highest": "#192540",
-              "surface-container-lowest": "#000000",
-              "on-primary-fixed-variant": "#0e009d",
-              "on-tertiary-fixed": "#3b002b",
-              tertiary: "#ffa5d9",
-              error: "#ff6e84",
-              "surface-dim": "#060e20",
               "outline-variant": "#40485d",
-              "inverse-on-surface": "#4d556b",
-              "on-secondary-fixed-variant": "#005969",
               background: "#060e20",
-              "on-tertiary-fixed-variant": "#6e1354",
               "primary-container": "#9396ff",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
             },
             fontFamily: {
               headline: ["Manrope"],
               body: ["Inter"],
-              label: ["Inter"],
             },
           },
         },
       };
     </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
+      .hero-grid {
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(163, 166, 255, 0.05) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
       }
-      .tonal-shift {
-        transition: background-color 0.3s ease;
+      /* Smooth transitions for mobile drawer */
+      #drawer {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 4px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: #060e20;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #40485d;
-        border-radius: 10px;
+      /* Prevent scrolling when drawer is open */
+      body.drawer-open {
+        overflow: hidden;
       }
     </style>
   </head>
-  <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
-    <!-- TopNavBar -->
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary overflow-x-hidden"
+  >
     <nav
-      class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(222,229,255,0.06)] font-manrope tracking-tight leading-relaxed"
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10"
     >
-      <div
-        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
-      >
-        <div class="text-2xl font-bold tracking-tighter text-[#dee5ff]">
-          Luminary
+      <div class="container flex justify-between items-center py-4 lg:py-6">
+        <div class="text-lg md:text-xl font-bold tracking-tight">
+          Portfolio <span class="text-primary mx-1">|</span> Gerardo Amel
         </div>
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
-            href="index.html"
-            >Home</a
-          >
-          <a
-            class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1"
-            href="about.html"
-            >About</a
-          >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
-            href="projects.html"
-            >Projects</a
-          >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors"
-            href="contact.html"
-            >Contact</a
-          >
+        <div class="hidden md:flex gap-8 lg:gap-12 font-medium">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
         </div>
-        <button
-          class="bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2 rounded-xl font-semibold scale-95 active:scale-90 transition-transform hover:opacity-90"
-        >
-          Resume
-        </button>
+        <div class="flex items-center gap-4">
+          <button
+            class="hidden md:block bg-primary text-surface font-bold px-6 py-2 rounded-lg hover:brightness-110 transition-all"
+          >
+            Resume
+          </button>
+          <button
+            aria-label="Open Menu"
+            class="md:hidden text-3xl p-2 -mr-2"
+            id="menu-btn"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
       </div>
     </nav>
-    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto overflow-x-hidden">
-      <!-- Hero Context / Title -->
-      <header class="mb-20">
-        <h1
-          class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface mb-4"
+    <!-- Navigation Overlay & Drawer -->
+    <div
+      class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 z-[60]"
+      id="overlay"
+    ></div>
+
+    <div
+      class="fixed top-0 right-0 h-full w-[80%] max-w-[320px] bg-surface-container border-l border-outline-variant/20 transform translate-x-full z-[70] p-8 flex flex-col shadow-2xl"
+      id="drawer"
+    >
+      <div class="flex justify-between items-center mb-12">
+        <span
+          class="text-sm font-bold uppercase tracking-widest text-on-surface-variant"
+          >Menu</span
         >
-          Fullstack <br />
-          <span class="text-primary">Web Developer.</span>
-        </h1>
-        <div class="h-1 w-24 bg-primary rounded-full"></div>
-      </header>
-      <!-- Main Content: Bio & Skills -->
+        <button
+          aria-label="Close Menu"
+          class="text-3xl p-2 -mr-2"
+          id="close-btn"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-8 text-xl font-semibold">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Projects</a>
+        <a class="nav-link" href="#">Contact</a>
+      </div>
+      <div class="mt-auto pt-8">
+        <button
+          class="w-full bg-primary text-surface font-bold px-4 py-4 rounded-xl shadow-lg shadow-primary/20"
+        >
+          Download Resume
+        </button>
+      </div>
+    </div>
+
+    <main class="pt-24 sm:pt-32 lg:pt-40 pb-20 overflow-hidden">
+      <!-- Hero Section -->
       <section
-        class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-32"
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-24 lg:mb-32"
       >
-        <!-- Left: Personal Bio -->
-        <div class="lg:col-span-5 space-y-8">
-          <div class="relative group">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+        >
+          <div class="lg:col-span-7 space-y-6 sm:space-y-8 order-2 lg:order-1">
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"
-            ></div>
-            <div
-              class="relative rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/10"
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/50 text-secondary text-xs sm:text-sm font-medium tracking-wide uppercase"
             >
-              <img
-                alt="Portrait of a developer"
-                class="w-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                data-alt="Close-up creative portrait of a professional developer in a dark studio setting with subtle blue rim lighting on their silhouette"
-                src="./assets/images/photo_profile.webp"
-              />
-            </div>
-          </div>
-          <div class="space-y-6">
-            <h2 class="text-3xl font-headline font-bold text-on-surface">
+              <span
+                class="w-2 h-2 rounded-full bg-secondary animate-pulse"
+              ></span>
               About me
-            </h2>
-            <p class="text-lg leading-relaxed text-on-surface-variant">
+            </div>
+            <h1
+              class="text-4xl sm:text-6xl lg:text-7xl font-headline font-extrabold tracking-tight leading-tight"
+            >
+              Developing
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary"
+                >Digital solutions</span
+              >
+              with purpose.
+            </h1>
+            <p
+              class="text-lg sm:text-xl text-on-surface-variant leading-relaxed max-w-2xl"
+            >
               Software Developer with experience building scalable web and
               mobile applications, primarily focused on CRM systems and internal
               enterprise solutions. Proven ability to contribute to the
@@ -199,362 +180,416 @@
               systems, educational tools, and real-time communication
               applications.
             </p>
-            <p class="text-lg leading-relaxed text-on-surface-variant">
+            <p
+              class="text-lg sm:text-xl text-on-surface-variant leading-relaxed max-w-2xl"
+            >
               Skilled in designing and implementing efficient workflows,
               developing new modules, and maintaining existing systems to ensure
               performance and reliability. Experienced in working with modern
               technologies and integrating systems to support business
               operations and decision-making.
             </p>
-            <p class="text-lg leading-relaxed text-on-surface-variant">
+            <p
+              class="text-lg sm:text-xl text-on-surface-variant leading-relaxed max-w-2xl"
+            >
               Passionate about continuous learning and delivering practical
               solutions that improve processes and user experience.
             </p>
-          </div>
-        </div>
-        <!-- Right: Skills Grid -->
-        <div class="lg:col-span-7 space-y-12">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Skill Card: React -->
-            <div
-              class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-300 group"
-            >
-              <h3 class="text-xl font-headline font-bold mb-4">Frontend</h3>
+            <div class="flex flex-wrap gap-4 pt-4">
               <div
-                class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"
+                class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/30"
               >
-                <div class="h-full bg-primary w-[95%] rounded-full"></div>
-              </div>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >HTML</span
+                <span class="material-symbols-outlined text-primary"
+                  >location_on</span
                 >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >CSS</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >Bootstrap</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >JavaScript</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >AJAX</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >React</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >React Native</span
+                <span class="text-sm font-medium"
+                  >Remote / Durango, Dgo. México</span
                 >
               </div>
-            </div>
-            <!-- Skill Card: Node -->
-            <div
-              class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-300"
-            >
-              <h3 class="text-xl font-headline font-bold mb-4">Backend</h3>
               <div
-                class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"
+                class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/30"
               >
-                <div class="h-full bg-secondary w-[88%] rounded-full"></div>
-              </div>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >MySQL</span
+                <span class="material-symbols-outlined text-secondary"
+                  >verified</span
                 >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >PHP</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >Node</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >Express</span
-                >
-              </div>
-            </div>
-            <!-- Skill Card: Node -->
-            <div
-              class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-300"
-            >
-              <h3 class="text-xl font-headline font-bold mb-4">Services</h3>
-              <div
-                class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"
-              >
-                <div class="h-full bg-secondary w-[88%] rounded-full"></div>
-              </div>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >WhatsApp (1Msg)</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >Geolocalización (Google)</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >ApexCharts</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] uppercase tracking-wider rounded-full font-label"
-                  >Datatables</span
+                <span class="text-sm font-medium"
+                  >Full Stack Web Developer</span
                 >
               </div>
             </div>
           </div>
-          <!-- Bento-style Stats -->
           <div
-            class="bg-surface-container-highest/30 p-8 flex justify-between rounded-2xl gap-8"
+            class="lg:col-span-5 relative order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div class="text-center md:text-left">
-              <p class="text-3xl font-headline font-black text-primary">05+</p>
-              <p
-                class="font-label text-[10px] text-outline uppercase tracking-widest"
-              >
-                Years Experience
-              </p>
-            </div>
-            <div class="text-center md:text-left">
-              <p class="text-3xl font-headline font-black text-secondary">
-                10+
-              </p>
-              <p
-                class="font-label text-[10px] text-outline uppercase tracking-widest"
-              >
-                Projects Shipped
-              </p>
-            </div>
-            <div class="text-center md:text-left">
-              <p class="text-3xl font-headline font-black text-on-surface">
-                99.9
-              </p>
-              <p
-                class="font-label text-[10px] text-outline uppercase tracking-widest"
-              >
-                Uptime Focus
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Experience Timeline -->
-      <section class="mt-40 mb-20">
-        <div class="flex items-center gap-6 mb-16">
-          <h2 class="text-4xl font-headline font-bold">Work Experience</h2>
-          <div class="flex-grow h-px bg-outline-variant/20"></div>
-        </div>
-        <div class="relative">
-          <!-- Vertical Line -->
-          <div
-            class="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent hidden md:block"
-          ></div>
-          <div class="space-y-24">
-            <!-- Current Role -->
             <div
-              class="relative flex flex-col md:flex-row items-start md:items-center group"
+              class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-none aspect-square"
             >
-              <div class="md:w-1/2 md:pr-16 text-left md:text-right">
-                <span
-                  class="font-label text-xs tracking-widest text-primary uppercase mb-2 block"
-                  >2022 - 2026</span
-                >
-                <h3 class="text-2xl font-headline font-bold text-on-surface">
-                  Fullstack Web Developer
-                </h3>
-                <p class="text-on-surface-variant mt-2 max-w-md ml-auto">
-                  Lead the frontend architecture for high-traffic SaaS
-                  applications, focusing on component modularity and performance
-                  optimization.
-                </p>
-              </div>
-              <!-- Marker -->
               <div
-                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-primary z-10 shadow-[0_0_20px_rgba(163,166,255,0.4)]"
+                class="absolute -top-6 -left-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/20 rounded-full blur-3xl floating"
               ></div>
-              <div class="md:w-1/2 md:pl-16 mt-6 md:mt-0">
-                <div
-                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors"
-                >
-                  <p
-                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
-                  >
-                    Grupo Optima
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- First Job -->
-            <div
-              class="relative flex flex-col md:flex-row-reverse items-start md:items-center group"
-            >
-              <div class="md:w-1/2 md:pl-16 text-left">
-                <span
-                  class="font-label text-xs tracking-widest text-secondary uppercase mb-2 block"
-                  >2019 — 2022</span
-                >
-                <h3 class="text-2xl font-headline font-bold text-on-surface">
-                  Fullstack Web Developer
-                </h3>
-                <p class="text-on-surface-variant mt-2 max-w-md">
-                  Developed custom CMS solutions and interactive brand
-                  experiences for international clients. Refined Node.js and SQL
-                  expertise.
-                </p>
-              </div>
-              <!-- Marker -->
               <div
-                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-secondary z-10"
+                class="absolute -bottom-6 -right-6 w-32 h-32 sm:w-40 sm:h-40 bg-secondary/20 rounded-full blur-3xl floating"
+                style="animation-delay: -2s"
               ></div>
-              <div class="md:w-1/2 md:pr-16 mt-6 md:mt-0 text-right">
+              <div
+                class="relative z-10 w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-outline-variant/50 group"
+              >
+                <img
+                  alt="Profile"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  src="./assets/images/photo_profile.webp"
+                />
                 <div
-                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-secondary/30 transition-colors inline-block w-full md:w-auto min-w-[240px]"
-                >
-                  <p
-                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
-                  >
-                    Secretaria de Educación del Estado de Durango (SEED)
-                  </p>
-                </div>
+                  class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"
+                ></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- Education Timeline -->
-      <section class="mt-40 mb-20">
-        <div class="flex items-center gap-6 mb-16">
-          <h2 class="text-4xl font-headline font-bold">Education</h2>
-          <div class="flex-grow h-px bg-outline-variant/20"></div>
-        </div>
-        <div class="relative">
-          <!-- Vertical Line -->
+      <!-- Stats Section -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div
-            class="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent hidden md:block"
+            class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-colors"
+          >
+            <span
+              class="text-4xl sm:text-5xl font-headline font-bold text-primary mb-4 block"
+              >05+</span
+            >
+            <h3 class="text-lg font-bold mb-1">Years Experience</h3>
+            <p class="text-sm text-on-surface-variant">
+              In fullstack development &amp; architecture.
+            </p>
+          </div>
+          <div
+            class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/30 hover:border-secondary/50 transition-colors"
+          >
+            <span
+              class="text-4xl sm:text-5xl font-headline font-bold text-secondary mb-4 block"
+              >10+</span
+            >
+            <h3 class="text-lg font-bold mb-1">Projects Shipped</h3>
+            <p class="text-sm text-on-surface-variant">
+              Delivering robust, scalable web platforms.
+            </p>
+          </div>
+          <div
+            class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/30 hover:border-tertiary/50 transition-colors"
+          >
+            <span
+              class="text-4xl sm:text-5xl font-headline font-bold text-tertiary mb-4 block"
+              >99.9</span
+            >
+            <h3 class="text-lg font-bold mb-1">Uptime Focus</h3>
+            <p class="text-sm text-on-surface-variant">
+              Prioritizing reliability and performance.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Detailed Skills & Education Section -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-8 space-y-12">
+            <div>
+              <h2 class="text-3xl font-headline font-bold mb-8">
+                Habilidades Técnicas
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="space-y-4">
+                  <h3
+                    class="text-sm font-bold uppercase tracking-widest text-primary"
+                  >
+                    Frontend
+                  </h3>
+                  <ul class="space-y-2 text-on-surface-variant">
+                    <li class="flex items-center gap-2 text-sm">
+                      <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      HTML, CSS, JavaScript
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                      <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      TailwindCSS, Bootstrap
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                      <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      jQuery, Datatables
+                    </li>
+                  </ul>
+                </div>
+                <!-- Backend -->
+                <div class="space-y-4">
+                  <h3
+                    class="text-sm font-bold uppercase tracking-widest text-secondary"
+                  >
+                    Backend
+                  </h3>
+                  <ul class="space-y-2 text-on-surface-variant">
+                    <li class="flex items-center gap-2 text-sm">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-secondary"
+                      ></span>
+                      MySQL
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-secondary"
+                      ></span>
+                      PHP (Laravel - Codeiniter)
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-secondary"
+                      ></span>
+                      Node.js, Express
+                    </li>
+                  </ul>
+                </div>
+                <!-- Services -->
+                <div class="space-y-4">
+                  <h3
+                    class="text-sm font-bold uppercase tracking-widest text-tertiary"
+                  >
+                    Servicios &amp; API
+                  </h3>
+                  <ul class="space-y-2 text-on-surface-variant">
+                    <li class="flex items-center gap-2 text-sm">
+                      <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                      WhatsApp Business API
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                      <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                      Geolocalización (Maps)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2 class="text-3xl font-headline font-bold mb-8">Educación</h2>
+              <div class="space-y-6">
+                <div
+                  class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                >
+                  <div>
+                    <h4 class="text-lg font-bold">Bachelor's Degree</h4>
+                    <p class="text-on-surface-variant">
+                      Instituto Tecnológico de Durango
+                    </p>
+                  </div>
+                  <span
+                    class="px-4 py-1 bg-surface-container-high rounded-full text-xs font-bold text-primary border border-primary/20"
+                    >Graduado</span
+                  >
+                </div>
+                <div
+                  class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                >
+                  <div>
+                    <h4 class="text-lg font-bold">High School</h4>
+                    <p class="text-on-surface-variant">CBTis #130</p>
+                  </div>
+                  <span
+                    class="px-4 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary border border-secondary/20"
+                    >Graduado</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Journey Section -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+        <h2
+          class="text-3xl sm:text-4xl font-headline font-bold mb-12 sm:mb-16 text-center"
+        >
+          Experiencia Laboral
+        </h2>
+        <div class="relative">
+          <div
+            class="absolute left-4 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent -translate-x-1/2"
           ></div>
-          <div class="space-y-24">
-            <!-- Current Role -->
+          <div class="space-y-12 sm:space-y-24">
+            <!-- Experience 1 -->
             <div
-              class="relative flex flex-col md:flex-row items-start md:items-center group"
+              class="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pl-12 lg:pl-0"
             >
-              <div class="md:w-1/2 md:pr-16 text-left md:text-right">
-                <span
-                  class="font-label text-xs tracking-widest text-primary uppercase mb-2 block"
-                  >2015 - 2022</span
-                >
-                <h3 class="text-2xl font-headline font-bold text-on-surface">
-                  Bachelor’s Degree
+              <div class="lg:text-right lg:pr-16">
+                <div class="text-primary font-bold mb-2">2022 — 2026</div>
+                <h3 class="text-xl sm:text-2xl font-bold mb-2">
+                  Fullstack Web Developer
                 </h3>
-                <p class="text-on-surface-variant mt-2 max-w-md ml-auto">
-                  Computer Systems Engineering with a specialization in Mobile
-                  Development
+                <div
+                  class="text-sm font-bold text-on-surface-variant mb-4 uppercase tracking-wider"
+                >
+                  Grupo Optima
+                </div>
+                <p
+                  class="text-on-surface-variant text-sm sm:text-base leading-relaxed"
+                >
+                  Contributed to the development and maintenance of internal CRM
+                  systems for vehicle sales management, working with brands such
+                  as Honda and KIA. Supported the implementation of new modules
+                  and enhancements to existing features, including customer
+                  lifecycle management, sales tracking, and employee operations.
+                  Additionally, collaborated on a mobile application integrated
+                  with internal systems, utilizing real-time communication
+                  (sockets) to trigger automated SMS notifications, improving
+                  internal communication and responsiveness in sales processes.
                 </p>
               </div>
-              <!-- Marker -->
+              <div class="hidden lg:block"></div>
               <div
-                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-primary z-10 shadow-[0_0_20px_rgba(163,166,255,0.4)]"
+                class="absolute left-0 lg:left-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 shadow-[0_0_15px_rgba(163,166,255,0.6)]"
               ></div>
-              <div class="md:w-1/2 md:pl-16 mt-6 md:mt-0">
-                <div
-                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors"
-                >
-                  <p
-                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
-                  >
-                    Instituto Tecnologico de Durango
-                  </p>
-                </div>
-              </div>
             </div>
-            <!-- First Job -->
+            <!-- Experience 2 -->
             <div
-              class="relative flex flex-col md:flex-row-reverse items-start md:items-center group"
+              class="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pl-12 lg:pl-0"
             >
-              <div class="md:w-1/2 md:pl-16 text-left">
-                <span
-                  class="font-label text-xs tracking-widest text-secondary uppercase mb-2 block"
-                  >2012 - 2015</span
-                >
-                <h3 class="text-2xl font-headline font-bold text-on-surface">
-                  High School
+              <div class="hidden lg:block order-1"></div>
+              <div class="lg:pl-16 order-2 lg:order-2">
+                <div class="text-secondary font-bold mb-2">2019 — 2022</div>
+                <h3 class="text-xl sm:text-2xl font-bold mb-2">
+                  Fullstack Web Developer
                 </h3>
-                <p class="text-on-surface-variant mt-2 max-w-md">
-                  Diploma with a specialization in Programming
+                <div
+                  class="text-sm font-bold text-on-surface-variant mb-4 uppercase tracking-wider"
+                >
+                  Secretaria de Educacion del Estado de Durango
+                </div>
+                <p
+                  class="text-on-surface-variant text-sm sm:text-base leading-relaxed"
+                >
+                  Contributed to the development of large-scale internal systems
+                  supporting multiple departments within the State Department of
+                  Education. Participated in building a school management system
+                  for secondary and teacher training institutions, including
+                  student records and academic tracking. Supported the
+                  development of a mobile application for event attendance using
+                  QR code scanning, along with a web platform for reporting and
+                  analytics. Also collaborated on modules for employee
+                  credential generation and printing, as well as geolocation
+                  mapping of schools and data analysis related to students,
+                  grades, and infrastructure. Additionally, developed a custom
+                  web application using an MVC architecture in PHP to support
+                  internal processes such as teacher allocation, onboarding, and
+                  job transfers across institutions.
                 </p>
               </div>
-              <!-- Marker -->
               <div
-                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-secondary z-10"
+                class="absolute left-0 lg:left-1/2 w-4 h-4 bg-secondary rounded-full -translate-x-1/2 shadow-[0_0_15px_rgba(83,221,252,0.6)]"
               ></div>
-              <div class="md:w-1/2 md:pr-16 mt-6 md:mt-0 text-right">
-                <div
-                  class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-secondary/30 transition-colors inline-block w-full md:w-auto min-w-[240px]"
-                >
-                  <p
-                    class="text-sm font-label text-outline mb-1 uppercase tracking-tighter"
-                  >
-                    CBTis #130
-                  </p>
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div
+          class="relative overflow-hidden bg-gradient-to-br from-surface-container-high to-surface-container-highest p-8 sm:p-12 lg:p-20 rounded-3xl border border-outline-variant/30 text-center"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,rgba(163,166,255,0.1),transparent_70%)]"
+          ></div>
+          <h2
+            class="text-3xl sm:text-5xl font-headline font-bold mb-6 sm:mb-8 relative z-10"
+          >
+            ¿Listo para innovar?
+          </h2>
+          <p
+            class="text-lg sm:text-xl text-on-surface-variant mb-10 sm:mb-12 max-w-2xl mx-auto relative z-10"
+          >
+            Hablemos sobre tu próximo proyecto y cómo mi experiencia puede
+            ayudarte a alcanzar tus objetivos tecnológicos.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
+          >
+            <a
+              class="w-full sm:w-auto px-8 py-4 bg-primary text-on-primary rounded-xl font-bold text-lg hover:scale-105 transition-transform"
+              href="#"
+              >Contactar Ahora</a
+            >
+            <a
+              class="w-full sm:w-auto px-8 py-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl font-bold text-lg hover:bg-surface-container-highest transition-colors"
+              href="#"
+              >Ver Proyectos</a
+            >
           </div>
         </div>
       </section>
     </main>
-    <!-- Footer -->
+
     <footer
-      class="bg-[#091328] w-full py-12 px-8 mt-auto border-t border-outline-variant/5"
+      class="bg-surface-container-low w-full py-12 md:py-16 border-t border-outline-variant/10 mt-auto"
     >
-      <div
-        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
-      >
-        <div class="text-lg font-black text-[#dee5ff]">
-          The Kinetic Luminary
+      <div class="container">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"
+        >
+          <div class="space-y-4">
+            <div class="text-xl font-black text-on-surface">
+              Portafolio <span class="text-primary mx-1">|</span> Gerardo Amel
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
+            <div class="flex gap-6">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >LinkedIn</a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >GitHub</a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+                href="#"
+                >Twitter</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="flex gap-8">
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >GitHub</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >LinkedIn</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >Twitter</a
-          >
-          <a
-            class="text-[#40485d] hover:text-[#dee5ff] font-inter text-sm tracking-wide uppercase transition-opacity hover:opacity-80"
-            href="#"
-            >Email</a
-          >
-        </div>
-        <div class="text-[#40485d] font-inter text-sm tracking-wide uppercase">
-          © 2024 The Kinetic Luminary. Built with Editorial Motion.
+        <div
+          class="mt-12 pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-on-surface-variant/60 uppercase tracking-widest"
+        >
+          <div>© 2026 Gerardo Amel. All rights reserved.</div>
         </div>
       </div>
     </footer>
+    <script>
+      const menuBtn = document.querySelector("#menu-btn");
+      const closeBtn = document.querySelector("#close-btn");
+      const drawer = document.querySelector("#drawer");
+      const overlay = document.querySelector("#overlay");
+      const body = document.body;
+
+      const toggleDrawer = (isOpen) => {
+        if (isOpen) {
+          drawer.classList.remove("translate-x-full");
+          overlay.classList.remove("opacity-0", "pointer-events-none");
+          body.classList.add("drawer-open");
+        } else {
+          drawer.classList.add("translate-x-full");
+          overlay.classList.add("opacity-0", "pointer-events-none");
+          body.classList.remove("drawer-open");
+        }
+      };
+
+      menuBtn.onclick = () => toggleDrawer(true);
+      closeBtn.onclick = () => toggleDrawer(false);
+      overlay.onclick = () => toggleDrawer(false);
+
+      // Close drawer when a link is clicked
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.onclick = () => toggleDrawer(false);
+      });
+    </script>
   </body>
 </html>
