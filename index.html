@@ -127,49 +127,59 @@
     class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary"
   >
     <!-- TopNavBar from Shared Components JSON -->
-    <nav
-      class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(222,229,255,0.06)]"
-    >
+    <nav class="fixed top-0 w-full z-50 bg-[#060e20]/70 backdrop-blur-xl">
       <div
-        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+        class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto"
       >
-        <div
-          class="text-2xl font-bold tracking-tighter text-[#dee5ff] font-headline"
-        >
-          Protafolio | Gerardo Amel
+        <!-- Logo -->
+        <div class="text-xl font-bold">Portfolio | Gerardo Amel</div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex gap-8">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
         </div>
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            class="text-[#a3a6ff] font-semibold border-b-2 border-[#a3a6ff] pb-1 font-manrope tracking-tight leading-relaxed"
-            href="index.html"
-            >Home</a
-          >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
-            href="about.html"
-            >About</a
-          >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
-            href="projects.html"
-            >Projects</a
-          >
-          <a
-            class="text-[#dee5ff]/80 font-medium hover:text-[#a3a6ff] transition-colors font-manrope tracking-tight leading-relaxed"
-            href="contact.html"
-            >Contact</a
-          >
-        </div>
+
+        <!-- Right -->
         <div class="flex items-center gap-4">
-          <button
-            class="bg-gradient-to-tr from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-bold hover:opacity-90 transition-all scale-95 active:scale-90 transition-transform"
-          >
+          <button class="hidden md:block bg-indigo-500 px-4 py-2 rounded-lg">
             Resume
           </button>
+
+          <!-- Mobile Button -->
+          <button id="menu-btn" class="md:hidden text-3xl">☰</button>
         </div>
       </div>
     </nav>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+    ></div>
+
+    <!-- DRAWER -->
+    <div
+      id="drawer"
+      class="fixed top-0 right-0 h-full w-[280px] bg-[#060e20] transform translate-x-full transition-transform duration-300 z-50 p-6"
+    >
+      <!-- Close -->
+      <div class="flex justify-end mb-6">
+        <button id="close-btn" class="text-3xl">✕</button>
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-col gap-6 text-lg">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+
+        <button class="mt-6 bg-indigo-500 px-4 py-2 rounded-lg">Resume</button>
+      </div>
+    </div>
     <main
       class="relative min-h-screen flex flex-col items-center justify-center pt-20"
     >
@@ -208,7 +218,11 @@
           <p
             class="text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed font-body"
           >
-            Building scalable, user-focused web and mobile applications using modern technologies. Specialized in developing internal systems, CRM platforms, and efficient workflows, with a focus on performance, system integration, and practical solutions for real-world business needs.
+            Building scalable, user-focused web and mobile applications using
+            modern technologies. Specialized in developing internal systems, CRM
+            platforms, and efficient workflows, with a focus on performance,
+            system integration, and practical solutions for real-world business
+            needs.
           </p>
           <!-- CTAs -->
           <div class="flex flex-wrap gap-4 pt-4">
@@ -362,5 +376,31 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const closeBtn = document.getElementById("close-btn");
+      const drawer = document.getElementById("drawer");
+      const overlay = document.getElementById("overlay");
+
+      function openMenu() {
+        drawer.classList.remove("translate-x-full");
+        overlay.classList.remove("opacity-0", "pointer-events-none");
+      }
+
+      function closeMenu() {
+        drawer.classList.add("translate-x-full");
+        overlay.classList.add("opacity-0", "pointer-events-none");
+      }
+
+      menuBtn.addEventListener("click", openMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      overlay.addEventListener("click", closeMenu);
+
+      // cerrar al hacer click en links
+      document.querySelectorAll("#drawer a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+    </script>
   </body>
 </html>
